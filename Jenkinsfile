@@ -2,7 +2,7 @@ node {
     checkout scm
 
     stage("Build") {
-        docker.image('composer:2-php8.4').inside('-u root') {
+        docker.image('composer:2.7').inside('-u root') {
             sh '''
             git config --global --add safe.directory /var/jenkins_home/workspace/Laraveldev
             composer install --no-interaction --prefer-dist
